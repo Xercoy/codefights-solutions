@@ -6,6 +6,25 @@ import (
 
 func TestAll(t *testing.T) {
 	testAdd(t)
+	testCenturyFromYear(t)
+
+}
+
+func testCheckPalindrome(t *testing.T) {
+	inputOutputMap := map[string]bool{
+		"aabaa": true,
+		"abac":  false,
+		"a":     true,
+		"az":    false,
+	}
+
+	for input, output := range inputOutputMap {
+		actualResult := checkPalindrome(input)
+
+		if actualResult != output {
+			t.Errorf("Failure calculating palindrome, result yielded %v, should have been %v", actualResult, output)
+		}
+	}
 }
 
 func testCenturyFromYear(t *testing.T) {

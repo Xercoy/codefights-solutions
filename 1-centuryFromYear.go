@@ -20,6 +20,15 @@ Guaranteed constraints:
 
 The number of the century the year is in. */
 
+/*
+Brilliant solution inspired by Tiff:
+
+func centuryFromYear(year int) int {
+    return 1 + ((year - 1) / 100)
+}
+
+*/
+
 package main
 
 func centuryFromYear(year int) int {
