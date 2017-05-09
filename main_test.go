@@ -9,8 +9,25 @@ func TestAll(t *testing.T) {
 	testCenturyFromYear(t)
 	testCheckPalindrome(t)
 	testAdjacentElementProduct(t)
+	testShapeArea(t)
 }
 
+func testShapeArea(t *testing.T) {
+	inputOutputMap := map[int]int{
+		2: 5,
+		3: 13,
+		1: 1,
+		5: 41,
+	}
+
+	for input, output := range inputOutputMap {
+		actualResult := shapeArea(input)
+
+		if actualResult != output {
+			t.Errorf("Error calculating n-interesting polygon squares, result yielded %d, should have been %d", actualResult, output)
+		}
+	}
+}
 func testAdjacentElementProduct(t *testing.T) {
 	inputOutputMap := map[int][]int{
 		21:  []int{3, 6, -2, -5, 7, 3},
