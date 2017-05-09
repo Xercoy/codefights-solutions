@@ -10,6 +10,23 @@ func TestAll(t *testing.T) {
 	testCheckPalindrome(t)
 	testAdjacentElementProduct(t)
 	testShapeArea(t)
+	testMakeConsecutive2(t)
+}
+
+func testMakeConsecutive2(t *testing.T) {
+	inputOutputMap := map[int][]int{
+		3: []int{6, 2, 3, 8},
+		2: []int{0, 3},
+		0: []int{1},
+	}
+
+	for output, input := range inputOutputMap {
+		actualResult := makeArrayConsecutive2(input)
+
+		if actualResult != output {
+			t.Errorf("Error calculating statues needed, result yielded %d, should have been %d", actualResult, output)
+		}
+	}
 }
 
 func testShapeArea(t *testing.T) {
