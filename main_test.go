@@ -7,7 +7,27 @@ import (
 func TestAll(t *testing.T) {
 	testAdd(t)
 	testCenturyFromYear(t)
+	testCheckPalindrome(t)
+	testAdjacentElementProduct(t)
+}
 
+func testAdjacentElementProduct(t *testing.T) {
+	inputOutputMap := map[int][]int{
+		21:  []int{3, 6, -2, -5, 7, 3},
+		2:   []int{-1, -2},
+		6:   []int{5, 1, 2, 3, 1, 4},
+		50:  []int{9, 5, 10, 2, 24, -1, -48},
+		30:  []int{5, 6, -4, 2, 3, 2, -23},
+		-12: []int{-23, 4, -3, 8, -12},
+	}
+
+	for output, input := range inputOutputMap {
+		actualResult := adjacentElementsProduct(input)
+
+		if actualResult != output {
+			t.Errorf("Failure calculating largest product, result yielded %d, should have been %d", actualResult, output)
+		}
+	}
 }
 
 func testCheckPalindrome(t *testing.T) {
